@@ -1,0 +1,24 @@
+{
+  "name": "harver-exercise-qa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heGITLab/harver-exercise-qa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heGITLab/harver-exercise-qa/issues"
+  },
+  "homepage": "https://github.com/heGITLab/harver-exercise-qa#readme",
+  "dependencies": {
+    "codeceptjs": "^3.2.2",
+    "puppeteer": "^13.0.0"
+  }
+}
