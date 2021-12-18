@@ -9,14 +9,17 @@ exports.config = {
         args: [
           '--start-maximized',
           'no-sandbox',
-          '--headless'
+          // '--headless'
         ]
       }
     }
   },
   include: {
     I: './steps_file.js',
-    welcomeToTheInternetPage: './pages/WelcomeToTheInternet.js'
+    welcomeToTheInternetPage: './pages/WelcomeToTheInternet.js',
+    addRemoveElementsPage: './pages/AddRemoveElements.js',
+    dropdownList: './pages/DropdownList.js',
+    contextMenu: './pages/ContextMenu.js'
   },
   mocha: {},
   bootstrap: null,
