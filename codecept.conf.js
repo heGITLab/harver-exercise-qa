@@ -14,7 +14,7 @@ exports.config = {
         ]
       }
     },
-    ChaiWrapper : {
+    ChaiWrapper: {
       "require": "codeceptjs-chai"
     }
   },
@@ -31,7 +31,7 @@ exports.config = {
     statusCode500Page: './pages/StatusCode500.js',
     dragAndDropPage: './pages/DragAndDrop.js',
     contextMenuPage: './pages/ContextMenu.js',
-    
+
   },
   mocha: {},
   bootstrap: null,
@@ -59,13 +59,13 @@ exports.config = {
   },
   stepTimeout: 0,
   stepTimeoutOverride: [{
-      pattern: 'wait.*',
-      timeout: 0
-    },
-    {
-      pattern: 'amOnPage',
-      timeout: 0
-    }
+    pattern: 'wait.*',
+    timeout: 0
+  },
+  {
+    pattern: 'amOnPage',
+    timeout: 0
+  }
   ],
   tests: './*_test.js',
   name: 'harver-exercise-qa'

@@ -1,5 +1,5 @@
 @contextMenu
-Feature: Selecting dropdown list
+Feature: Right click
   User should be able to right click on context menu
   User should be able to select a value from context menu
 

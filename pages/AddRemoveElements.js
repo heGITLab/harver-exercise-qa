@@ -4,20 +4,22 @@ module.exports = {
 
     // locators in add/remove elements page
     locators: {
-        btn_addElement: "//button[contains(text(), 'Add Element')]",
-        btn_delete: "//button[contains(text(), 'Delete')]",
         label_addRemoveElements: "//h3[contains(text(), 'Add/Remove Elements')]"
     },
 
     // functions which perform operations in add/remove elements page
+    getLink(value) {
+        return `//button[contains(text(), '${value}')]`;
+    },
+
     clickAddElement() {
-        I.waitForElement(this.locators.btn_addElement, 10);
-        I.click(this.locators.btn_addElement);
+        I.waitForElement(this.getLink('Add Element'), 10);
+        I.click(this.getLink('Add Element'));
     },
 
     clickDelete() {
-        I.waitForElement(this.locators.btn_delete, 10);
-        I.click(this.locators.btn_delete);
+        I.waitForElement(this.getLink('Delete'), 10);
+        I.click(this.getLink('Delete'));
     },
 
     async getAddRemoveElementsText() {

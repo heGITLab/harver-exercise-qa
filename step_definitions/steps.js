@@ -106,7 +106,7 @@ Then('User validate the status code 500 description and click on here', async ()
 
 // feature : dragAndDrop
 Given('User click on drag and drop then navigate', () => {
- welcomeToTheInternetPage.clickDragAndDrop();
+  welcomeToTheInternetPage.clickDragAndDrop();
 });
 
 When('User validate the drag and drop text', async () => {
