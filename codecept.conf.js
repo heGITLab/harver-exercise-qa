@@ -2,6 +2,7 @@ exports.config = {
   output: './output',
   helpers: {
     Puppeteer: {
+      // base url
       url: 'https://the-internet.herokuapp.com',
       show: true,
       windowSize: '1200x900',
@@ -12,14 +13,25 @@ exports.config = {
           // '--headless'
         ]
       }
+    },
+    ChaiWrapper : {
+      "require": "codeceptjs-chai"
     }
   },
   include: {
     I: './steps_file.js',
     welcomeToTheInternetPage: './pages/WelcomeToTheInternet.js',
     addRemoveElementsPage: './pages/AddRemoveElements.js',
-    dropdownList: './pages/DropdownList.js',
-    contextMenu: './pages/ContextMenu.js'
+    dropdownListPage: './pages/DropdownList.js',
+    redirectLinkPage: './pages/RedirectLink.js',
+    statusCodesPage: './pages/StatusCodes.js',
+    statusCode200Page: './pages/StatusCode200.js',
+    statusCode301Page: './pages/StatusCode301.js',
+    statusCode404Page: './pages/StatusCode404.js',
+    statusCode500Page: './pages/StatusCode500.js',
+    dragAndDropPage: './pages/DragAndDrop.js',
+    contextMenuPage: './pages/ContextMenu.js',
+    
   },
   mocha: {},
   bootstrap: null,
@@ -40,6 +52,9 @@ exports.config = {
     },
     tryTo: {
       enabled: true
+    },
+    allure: {
+      "enabled": true
     }
   },
   stepTimeout: 0,

@@ -6,5 +6,4 @@ Feature: Selecting dropdown list
   Scenario: Perform right click
     Given User click on context menu link and navigate
     When User validate the context menu text
-    When User right click on the box and accept the popup
-    # Then User click back option in context menu and validate heading
+    Then User right click on the box and accept the popup

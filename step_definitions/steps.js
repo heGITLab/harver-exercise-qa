@@ -1,4 +1,4 @@
-const { I, welcomeToTheInternetPage, addRemoveElementsPage, dropdownList, contextMenu} = inject();
+const { I, welcomeToTheInternetPage, addRemoveElementsPage, dropdownListPage, contextMenuPage, redirectLinkPage, statusCodesPage, statusCode200Page, statusCode301Page, statusCode404Page, statusCode500Page, dragAndDropPage } = inject();
 
 const assert = require('assert').strict;
 
@@ -27,15 +27,15 @@ Given('User click on dropdown link and navigate', () => {
 });
 
 When('User validate the dropdown list text', async () => {
-  assert.deepEqual(await dropdownList.getDropdownListText(), 'Dropdown List', 'Expected text not present');
+  assert.deepEqual(await dropdownListPage.getDropdownListText(), 'Dropdown List', 'Expected text not present');
 });
 
 When('User select option 1 from dropdown', () => {
-  dropdownList.clickOption1();
+  dropdownListPage.clickOption1();
 });
 
 Then('User select option 2 from dropdown', () => {
-  dropdownList.clickOption2();
+  dropdownListPage.clickOption2();
 });
 
 
@@ -45,14 +45,78 @@ Given('User click on context menu link and navigate', () => {
 });
 
 When('User validate the context menu text', async () => {
-  assert.deepEqual(await contextMenu.getContextMenuText(), 'Context Menu', 'Expected text not present');
+  assert.deepEqual(await contextMenuPage.getContextMenuText(), 'Context Menu', 'Expected text not present');
 });
 
 When('User right click on the box and accept the popup', () => {
-  contextMenu.rightClickOnBox();
+  contextMenuPage.rightClickOnBox();
 });
 
-// Then('User click back option in context menu and validate heading', async () => {
-//   contextMenu.clickOnContextMenu();
-//   assert.deepEqual(await welcomeToTheInternetPage.getHeadingText(), 'Welcome to the-internet', 'Expected text not present');
-// });
+
+// feature : redirectLink
+Given('User click on redirect link and navigate', () => {
+  welcomeToTheInternetPage.clickRedirectLink();
+});
+
+When('User validate the redirection text and click on here', async () => {
+  assert.deepEqual(await redirectLinkPage.getRedirectionText(), 'Redirection', 'Expected text not present');
+  redirectLinkPage.clickHere();
+});
+
+When('User validate the status codes text and click on 200', async () => {
+  assert.deepEqual(await statusCodesPage.getStatusCodesText(), 'Status Codes', 'Expected text not present');
+  statusCodesPage.clickStatusCode200();
+});
+
+When('User validate the status code 200 description and click on here', async () => {
+  I.assertContain(await statusCode200Page.getStatusCode200Description(), '200', 'Expected text not present');
+  statusCode200Page.clickHere();
+});
+
+When('User validate the status codes text and click on 301', async () => {
+  assert.deepEqual(await statusCodesPage.getStatusCodesText(), 'Status Codes', 'Expected text not present');
+  statusCodesPage.clickStatusCode301();
+});
+
+When('User validate the status code 301 description and click on here', async () => {
+  I.assertContain(await statusCode301Page.getStatusCode301Description(), '301', 'Expected text not present');
+  statusCode301Page.clickHere();
+});
+
+When('User validate the status codes text and click on 404', async () => {
+  assert.deepEqual(await statusCodesPage.getStatusCodesText(), 'Status Codes', 'Expected text not present');
+  statusCodesPage.clickStatusCode404();
+});
+
+When('User validate the status code 404 description and click on here', async () => {
+  I.assertContain(await statusCode404Page.getStatusCode404Description(), '404', 'Expected text not present');
+  statusCode404Page.clickHere();
+});
+
+When('User validate the status codes text and click on 500', async () => {
+  assert.deepEqual(await statusCodesPage.getStatusCodesText(), 'Status Codes', 'Expected text not present');
+  statusCodesPage.clickStatusCode500();
+});
+
+Then('User validate the status code 500 description and click on here', async () => {
+  I.assertContain(await statusCode500Page.getStatusCode500Description(), '500', 'Expected text not present');
+  statusCode500Page.clickHere();
+});
+
+
+// feature : dragAndDrop
+Given('User click on drag and drop then navigate', () => {
+ welcomeToTheInternetPage.clickDragAndDrop();
+});
+
+When('User validate the drag and drop text', async () => {
+  assert.deepEqual(await dragAndDropPage.getDragAndDropText(), 'Drag and Drop', 'Expected text not present');
+});
+
+When('User drag and drop A on B', async () => {
+  dragAndDropPage.dragAndDropA();
+});
+
+Then('User drag and drop B on A', () => {
+  dragAndDropPage.dragAndDropB();
+});

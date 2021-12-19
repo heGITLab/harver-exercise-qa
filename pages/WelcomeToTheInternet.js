@@ -5,7 +5,7 @@ module.exports = {
   // locators in welcome to the internet page
   locators: {
     link_addRemoveElements: "//a[contains(text(), 'Add/Remove Elements')]",
-    link_basicAuth: "//a[contains(text(), 'Basic Auth')]",
+    link_redirectLink: "//a[contains(text(), 'Redirect Link')]",
     link_contextMenu: "//a[contains(text(), 'Context Menu')]",
     link_dragAndDrop: "//a[contains(text(), 'Drag and Drop')]",
     link_dropdown: "//a[contains(text(), 'Dropdown')]",
@@ -19,8 +19,10 @@ module.exports = {
     I.click(this.locators.link_addRemoveElements);
   },
 
-  clickBasicAuth() {
-    I.click(this.locators.link_basicAuth);
+  clickRedirectLink() {
+    this.loadUrl();
+    I.waitForElement(this.locators.link_redirectLink, 10);
+    I.click(this.locators.link_redirectLink);
   },
 
   clickContextMenu() {
@@ -30,6 +32,8 @@ module.exports = {
   },
 
   clickDragAndDrop() {
+    this.loadUrl();
+    I.waitForElement(this.locators.link_dragAndDrop, 10);
     I.click(this.locators.link_dragAndDrop);
   },
 

@@ -15,11 +15,7 @@ module.exports = {
         I.rightClick(this.locators.div_hotSpot);
         I.acceptPopup();
     },
-
-    clickOnContextMenu() {
-        I.wait(2);
-    },
-
+    
     async getContextMenuText() {
         I.waitForElement(this.locators.label_contextMenu, 10);
         return await I.grabTextFrom(this.locators.label_contextMenu);
