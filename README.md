@@ -23,7 +23,12 @@ The project is based on https://the-internet.herokuapp.com. Automated five tests
 
 - npm install
 
-## Execute Tests
+## Execute Test
 
 1. Test Suite - Heroku App
    1. npm run test
+
+## Execute Report
+
+1. Test Report - Heroku App
+    1. allure serve output
